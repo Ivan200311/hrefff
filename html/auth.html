@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet" />
+
+
+    <title>{{title}}</title>
+</head>
+<body>
+<div class="nav">
+    {%for i in menu%}
+        <a href="{{i.url}}">{{i.name}}</a>
+    {%endfor%}
+</div>
+<h2>{{title}}</h2>
+<form action="/check" method="POST">
+    <div class="input">
+    <input name="login" type="text" placeholder="Введите ваш логин " id="login">  </div>
+    <div class="input">
+    <input name="password" type="password" placeholder="Введите ваш пароль " id="password"> </div>
+
+    <button>Войти</button></form>
+</body>
+</html>
