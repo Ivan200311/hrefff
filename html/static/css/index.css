@@ -35,3 +35,23 @@ form{
  margin: 0 auto;
 
  }
+.input{
+    width: 200px;
+    text-align: center;
+    margin-left: 650px;
+
+}
+form,label{
+text-align: center;
+}
+.input_link{
+text-align: center;
+align-items: center;
+}
+.otp{
+width: 200px;
+border-radius: 20px;
+background-color: rgb(95, 95, 228);
+color: white;
+    margin-left: 650px;
+}

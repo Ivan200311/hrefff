@@ -1,0 +1,26 @@
+.nav{
+display: flex;
+justify-content: space-around;
+gap: 65px;
+background-color: blanchedalmond;
+border-radius: 20px;
+height: 50px;
+align-items: center;
+}
+a{
+text-decoration: none;
+color: black;
+}
+.conteiner{
+margin-left: 650px;
+}
+.pro{
+  gap: 15px;
+   width: 340px;
+
+}
+
+.edwww{
+  border: 1px solid black;
+  padding: 20px;
+}

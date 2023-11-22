@@ -20,5 +20,27 @@
 <div class="img">
     <img src="static/img/images.jpg">
 </div>
-</body>
+{% if session['user_login']!=None%}
+<form action="/reduce" method="POST">
+<div class="input">
+            <input class="input_link" type="text" name="www" id="link" placeholder=" ">
+            <label class="label" for="link">Введите ссылку</label></div>
+        <div class="links">
+                {%for t in tipes%}
+                    <input type="radio" id="{{t[0]}}" name="types" value="{{t[0]}}" checked/>
+                    <label for="{{t[0]}}">{{t[1]}}</label>
+                {%endfor%}
+        </div>
+        <div class="input">
+
+            <input class="input_link" id="psev" type="text" name="namewww" placeholder=" ">
+            <label class="label" for="psev">Введите псевдоним</label></div>
+
+
+            <input class="otp" type="submit" value="Сократить">
+        {% for msg in get_flashed_messages() %}
+            <a href="{{msg}}">{{msg}}</a>
+    {% endfor %}
+    </form>
+{% endif %}</body>
 </html>

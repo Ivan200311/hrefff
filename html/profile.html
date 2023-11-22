@@ -14,11 +14,34 @@
     {%for i in menu%}
         <a href="{{i.url}}">{{i.name}}</a>
     {%endfor%}
-</div>
-<div class="conteiner">
-<form action="/logout" method="POST" >
+    <form action="/logout" method="POST" >
     <button>Выход</button>
 </form>
+</div>
+<div class="conteiner">
+
+    <h1> Профиль: {{user[1]}}</h1>
+
+<div class="pro">
+    {%for i in wwws%}
+    <div class="edwww">
+    <p><a href="{{host}}www/{{i[2]}}">{{host}}www/{{i[2]}}</a></p>
+    <p>колв-о переходов {{i[5]}}</p>
+    <p>тип {{i[7]}}</p>
+
+        <form action="/delete" method="POST">
+            <button name="id" value="{{i[0]}}">удалить</button>
+        </form>
+
+        <form action="/update" method="POST">
+            <button name="id" value="{{i[0]}}">редактировать</button>
+        </form>
+
+</div>
+    {%endfor%}
+</div>
+
+
 </div>
 </body>
 </html>

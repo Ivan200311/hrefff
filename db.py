@@ -1,6 +1,5 @@
 import sqlite3
 
-
 connect = sqlite3.connect("db.db")
 cursor = connect.cursor()
 
@@ -37,3 +36,15 @@ cursor.execute('''
 connect.commit()
 
 
+types = cursor.execute('''SELECT * FROM links_types''').fetchall()
+
+
+if types==[]:
+    cursor.execute('''INSERT INTO links_types(type) VALUES("Публичная")''')
+    connect.commit()
+
+    cursor.execute('''INSERT INTO links_types(type) VALUES("Общая")''')
+    connect.commit()
+
+    cursor.execute('''INSERT INTO links_types(type) VALUES("Приватная")''')
+    connect.commit()
